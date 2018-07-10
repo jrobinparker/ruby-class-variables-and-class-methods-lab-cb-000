@@ -28,15 +28,7 @@ class Song
   end
   
   def self.genre_count
-    genre_array = @@genres.split("\n")
-    gerne
-    genre_array.each do |genre|
-      
-      
-      genre_hash.merge(genre)
-    end
-
-    genre_hash
+    @@genres.group_by{ |v| v }.map{ |k, v| [k, v.size] }
   end
   
 end 
